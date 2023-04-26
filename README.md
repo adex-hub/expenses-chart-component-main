@@ -35,7 +35,7 @@ Users should be able to:
 ![](./screenshot.png)
 ### Links
 
-- Live Site URL: [Add live site URL here](https:/expenseschartbyade.netlify.app)
+- Live Site URL: [Add live site URL here](https:/expenseschartbyade.vercel.app)
 
 ## My process
 
