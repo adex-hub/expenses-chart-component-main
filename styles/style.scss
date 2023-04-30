@@ -59,15 +59,15 @@ body {
       .header-copy {
         line-height: 40px;
         padding: 0 0 10px 0;
+        .header-amount {
+          font-weight: 700;
+        }
       }
 
       img {
         width: 70px;
       }
 
-      .header-amount {
-        font-weight: 700;
-      }
     }
 
     .spendings {
@@ -75,6 +75,11 @@ body {
       background: $pale-orange;
       border-radius: 16px;
       padding: 30px 40px;
+      .chart{
+        #myChart{
+          cursor: pointer;
+        }
+      }
 
       // sub-elements
       .heading {
@@ -95,13 +100,10 @@ body {
         justify-content: space-between;
         align-items: flex-end;
         padding: 15px 0 0 0;
-        // .total-amount,
-        // .residual-savings {
-        //   font-weight: 700;
-        // }
         .toLeft {
           line-height: 2.7rem;
           color: $mid-brown;
+          font-size: 17px;
           .total-amount {
             color: $dark-brown;
             font-weight: 700;
@@ -110,8 +112,9 @@ body {
         }
         .toRight {
           text-align: right;
-          line-height: 1.3rem;
+          line-height: 1.6rem;
           color: $mid-brown;
+          font-size: 17px;
           .residual-savings {
             color: $dark-brown;
             font-weight: 700;
@@ -134,7 +137,63 @@ body {
 @media (max-width: 475px) {
   body{
     main{
-      transform: scale(0.6);
+      transform: scale(1); // Counter measure for the scale down of the earlier media query.
+      width: 343px;
+
+      header{
+        height: 97px;
+        border-radius: 10px;
+        padding: 0 22px;
+        margin: 0 0 16px 0;
+
+        .header-copy{
+          line-height: 1.9rem;
+          .balance-text{
+            font-size: 15px;
+          }
+          .header-amount{
+            font-size: 24px;
+          }
+        }
+
+        img{
+          width: 60px;
+        }
+      }
+
+      .spendings{
+        height: 420px;
+        padding: 30px 20px;
+        border-radius: 10px;
+
+        .heading {
+          font-size: 22px;
+        }
+        .chart{
+          #myChart{
+            height: 190px;
+          }
+        }
+        .divider {
+          margin: 23px 0 0 0;
+        }
+
+        .summary{
+          padding: 24px 0 0 0;
+          .toLeft{
+            font-size: 15px;
+            line-height: 2.1rem;
+            .total-amount{
+              font-size: 30px;
+            }
+          }
+
+          .toRight{
+            font-size: 15px;
+            line-height: 1.3rem;
+          }
+        }
+      }
     }
   }
 }

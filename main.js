@@ -23,7 +23,7 @@ xmlhttp.onreadystatechange = function () {
             label: "Amount",
             data: amount,
             borderWidth: 1,
-            borderRadius: 5,
+            borderRadius: `${document.documentElement.clientWidth <= 475 ? 3 : 5}`,
             borderColor: [
               "hsl(10, 79%, 65%)",
               "hsl(10, 79%, 65%)",
@@ -78,7 +78,7 @@ xmlhttp.onreadystatechange = function () {
             ticks: {
               color: 'hsl(28, 10%, 53%)',
               font: {
-                size: 14,
+                size: `${document.documentElement.clientWidth <= 475 ? 12 : 16}`,
                 family: 'DM Sans',
               },
             },
@@ -114,12 +114,13 @@ xmlhttp.onreadystatechange = function () {
               title: () => null,
             },
             bodyFont: {
-              size: 16,
+              size: `${document.documentElement.clientWidth <= 475 ? 11 : 16}`,
               weight: "bold",
               family: 'DM Sans',
             },
           },
         },
+        maintainAspectRatio: `${document.documentElement.clientWidth <= 475 ? false : true}`,
       },
     });
   }

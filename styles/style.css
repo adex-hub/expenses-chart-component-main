@@ -36,17 +36,20 @@ body main header .header-copy {
   line-height: 40px;
   padding: 0 0 10px 0;
 }
+body main header .header-copy .header-amount {
+  font-weight: 700;
+}
 body main header img {
   width: 70px;
-}
-body main header .header-amount {
-  font-weight: 700;
 }
 body main .spendings {
   height: 510px;
   background: hsl(33, 100%, 98%);
   border-radius: 16px;
   padding: 30px 40px;
+}
+body main .spendings .chart #myChart {
+  cursor: pointer;
 }
 body main .spendings .heading {
   font-weight: 700;
@@ -69,6 +72,7 @@ body main .spendings .summary {
 body main .spendings .summary .toLeft {
   line-height: 2.7rem;
   color: hsl(28, 10%, 53%);
+  font-size: 17px;
 }
 body main .spendings .summary .toLeft .total-amount {
   color: hsl(25, 47%, 15%);
@@ -77,8 +81,9 @@ body main .spendings .summary .toLeft .total-amount {
 }
 body main .spendings .summary .toRight {
   text-align: right;
-  line-height: 1.3rem;
+  line-height: 1.6rem;
   color: hsl(28, 10%, 53%);
+  font-size: 17px;
 }
 body main .spendings .summary .toRight .residual-savings {
   color: hsl(25, 47%, 15%);
@@ -92,6 +97,53 @@ body main .spendings .summary .toRight .residual-savings {
 }
 @media (max-width: 475px) {
   body main {
-    transform: scale(0.6);
+    transform: scale(1);
+    width: 343px;
+  }
+  body main header {
+    height: 97px;
+    border-radius: 10px;
+    padding: 0 22px;
+    margin: 0 0 16px 0;
+  }
+  body main header .header-copy {
+    line-height: 1.9rem;
+  }
+  body main header .header-copy .balance-text {
+    font-size: 15px;
+  }
+  body main header .header-copy .header-amount {
+    font-size: 24px;
+  }
+  body main header img {
+    width: 60px;
+  }
+  body main .spendings {
+    height: 420px;
+    padding: 30px 20px;
+    border-radius: 10px;
+  }
+  body main .spendings .heading {
+    font-size: 22px;
+  }
+  body main .spendings .chart #myChart {
+    height: 190px;
+  }
+  body main .spendings .divider {
+    margin: 23px 0 0 0;
+  }
+  body main .spendings .summary {
+    padding: 24px 0 0 0;
+  }
+  body main .spendings .summary .toLeft {
+    font-size: 15px;
+    line-height: 2.1rem;
+  }
+  body main .spendings .summary .toLeft .total-amount {
+    font-size: 30px;
+  }
+  body main .spendings .summary .toRight {
+    font-size: 15px;
+    line-height: 1.3rem;
   }
 }/*# sourceMappingURL=style.css.map */
