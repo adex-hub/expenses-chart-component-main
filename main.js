@@ -1,14 +1,9 @@
 "use strict";
-var url = "data.json";
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
-xmlhttp.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    var data = JSON.parse(this.responseText);
-    // console.log(data);
-    var day = data.map((elem) => elem.day);
-    var amount = data.map((elem) => elem.amount);
+fetch("data.json")
+  .then((response) => response.json())
+  .then((data) => {
+    const day = data.map((elem) => elem.day);
+    const amount = data.map((elem) => elem.amount);
     console.log(day, amount);
 
     // Chart.defaults.global.defaultFontFamily = "DM Sans";
@@ -23,7 +18,9 @@ xmlhttp.onreadystatechange = function () {
             label: "Amount",
             data: amount,
             borderWidth: 1,
-            borderRadius: `${document.documentElement.clientWidth <= 475 ? 3 : 5}`,
+            borderRadius: `${
+              document.documentElement.clientWidth <= 475 ? 3 : 5
+            }`,
             borderColor: [
               "hsl(10, 79%, 65%)",
               "hsl(10, 79%, 65%)",
@@ -76,10 +73,12 @@ xmlhttp.onreadystatechange = function () {
               display: false,
             },
             ticks: {
-              color: 'hsl(28, 10%, 53%)',
+              color: "hsl(28, 10%, 53%)",
               font: {
-                size: `${document.documentElement.clientWidth <= 475 ? 12 : 16}`,
-                family: 'DM Sans',
+                size: `${
+                  document.documentElement.clientWidth <= 475 ? 12 : 16
+                }`,
+                family: "DM Sans",
               },
             },
           },
@@ -116,12 +115,14 @@ xmlhttp.onreadystatechange = function () {
             bodyFont: {
               size: `${document.documentElement.clientWidth <= 475 ? 11 : 16}`,
               weight: "bold",
-              family: 'DM Sans',
+              family: "DM Sans",
             },
           },
         },
-        maintainAspectRatio: `${document.documentElement.clientWidth <= 475 ? false : true}`,
+        maintainAspectRatio: `${
+          document.documentElement.clientWidth <= 475 ? false : true
+        }`,
       },
     });
-  }
-};
+  })
+  .catch((err) => console.error(`Error fetching data: ${err}`));
