@@ -48,7 +48,7 @@ Users should be able to:
 
 ### What I learned
 
-I really had the opportunity to experience data visualization via bar charts for the first time and I was able to learn a lot and code according to the design. This project taught me resilience as the 
+I really had the opportunity to experience data visualization via bar charts for the first time and I was able to learn a lot and code according to the design. This project taught me resilience as I didn't have any previous experience with chart JS.
 
 ### Continued development
 
